@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:padding="20dp"
+
+    android:background="@color/headerColor">
+
+    <ImageView
+        android:id="@+id/header"
+        android:layout_width="242dp"
+        android:layout_height="165dp"
+        android:layout_gravity="center"
+        android:src="@drawable/headerlogo"></ImageView>
+</LinearLayout>

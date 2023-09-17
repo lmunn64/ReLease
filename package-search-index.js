@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"api"},{"l":"com.example.releasefrontend"},{"l":"com.example.releasefrontend.landlordScreens"},{"l":"com.example.releasefrontend.tenantScreens"},{"l":"Fragments"},{"l":"model"},{"l":"Utils"}]

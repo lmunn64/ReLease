@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>nav_landlord_activity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #629755; font-weight: bold; font-style: italic;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+nav_landlord_activity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.releasefrontend.landlordScreens</span><span class="s0">;</span>
+<span class="s2">/**</span>
+ <span class="s2">* </span><span class="s3">@author </span><span class="s2">Luke Munn</span>
+ <span class="s2">*/</span>
+
+<span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.MenuItem</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.FrameLayout</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.ImageView</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.annotation.NonNull</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.ActionBarDrawerToggle</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.appcompat.widget.Toolbar</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.core.view.GravityCompat</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.drawerlayout.widget.DrawerLayout</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">com.example.releasefrontend.LandlordRegister</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.releasefrontend.LoginActivity</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.releasefrontend.R</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.releasefrontend.tenantScreens.MaintenanceActivity</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.releasefrontend.tenantScreens.TenantFrontPage</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.google.android.material.navigation.NavigationView</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* Navigation drawer to be placed over all landlord screens.</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">nav_landlord_activity </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s0">implements </span><span class="s1">NavigationView.OnNavigationItemSelectedListener {</span>
+    <span class="s1">DrawerLayout drawerLayout</span><span class="s0">;</span>
+    <span class="s1">ImageView header</span><span class="s0">;</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">setContentView(View view){</span>
+        <span class="s4">//inflate and set navigation drawers and content view</span>
+        <span class="s1">drawerLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_landlord_nav</span><span class="s0">, null</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">FrameLayout container = drawerLayout.findViewById(R.id.activityContainer)</span><span class="s0">;</span>
+        <span class="s1">container.addView(view)</span><span class="s0">;</span>
+        <span class="s0">super</span><span class="s1">.setContentView(drawerLayout)</span><span class="s0">;</span>
+        <span class="s1">NavigationView navView = findViewById(R.id.navLandlord)</span><span class="s0">;</span>
+        <span class="s1">View headerView =  navView.inflateHeaderView(R.layout.main_drawer_header)</span><span class="s0">;</span>
+        <span class="s1">header = headerView.findViewById(R.id.header)</span><span class="s0">;</span>
+
+        <span class="s1">header.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s4">//set click listener so if user clicks the top header it will return to the main screen</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View v) {</span>
+                <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(nav_landlord_activity.</span><span class="s0">this, </span><span class="s1">LandlordHomePageActivity.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+        <span class="s4">//set actionbar toggle for user to open the navigation drawer on a click</span>
+        <span class="s1">Toolbar toolbar = drawerLayout.findViewById(R.id.toolbar)</span><span class="s0">;</span>
+        <span class="s1">setSupportActionBar(toolbar)</span><span class="s0">;</span>
+
+        <span class="s1">NavigationView navigationView = (NavigationView) findViewById(R.id.navLandlord)</span><span class="s0">;</span>
+        <span class="s1">navigationView.setNavigationItemSelectedListener(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">ActionBarDrawerToggle toggle = </span><span class="s0">new </span><span class="s1">ActionBarDrawerToggle(</span><span class="s0">this, </span><span class="s1">drawerLayout</span><span class="s0">,</span><span class="s1">toolbar</span><span class="s0">, </span><span class="s1">R.string.nav_open</span><span class="s0">, </span><span class="s1">R.string.nav_close)</span><span class="s0">;</span>
+        <span class="s1">drawerLayout.addDrawerListener(toggle)</span><span class="s0">;</span>
+        <span class="s1">toggle.syncState()</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public boolean </span><span class="s1">onNavigationItemSelected(@NonNull MenuItem item) {</span>
+        <span class="s1">drawerLayout.closeDrawer(GravityCompat.START)</span><span class="s0">;</span>
+        <span class="s4">// Handle navigation view item clicks here.</span>
+        <span class="s0">int </span><span class="s1">id = item.getItemId()</span><span class="s0">;</span>
+        <span class="s0">if </span><span class="s1">(id == R.id.nav_manage) { </span><span class="s4">//If user clicks on property management menu item send to property management activity</span>
+            <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(nav_landlord_activity.</span><span class="s0">this, </span><span class="s1">PropertyManagementActivity.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if </span><span class="s1">(id == R.id.nav_maintenance) {</span><span class="s4">//If user clicks on maintenance menu item send to maintenance activity</span>
+            <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(nav_landlord_activity.</span><span class="s0">this, </span><span class="s1">MaintenanceLandlordActivity.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if </span><span class="s1">(id == R.id.nav_logout) { </span><span class="s4">//If user clicks on maintenance menu item send to login activity</span>
+            <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(nav_landlord_activity.</span><span class="s0">this, </span><span class="s1">LoginActivity.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">return true;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">protected void </span><span class="s1">allocateActivityTitle(String titleString){</span>
+        <span class="s0">if</span><span class="s1">(getSupportActionBar() != </span><span class="s0">null</span><span class="s1">){</span>
+            <span class="s1">getSupportActionBar().setTitle(titleString)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

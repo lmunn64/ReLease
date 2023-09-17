@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ReleaseFrontend"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".landlordScreens.MaintenanceLandlordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".newTenantUnitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".newTenantBuildingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tenantScreens.nav_base_activity"
+            android:exported="false" />
+        <activity
+            android:name=".tenantScreens.SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".tenantScreens.MaintenanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tenantScreens.RentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tenantScreens.TenantFrontPage"
+            android:exported="false" />
+        <activity
+            android:name=".LandlordRegister"
+            android:exported="false" />
+        <activity
+            android:name=".TenantRegister"
+            android:exported="false" />
+        <activity
+            android:name=".landlordScreens.FillUnitArrayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".landlordScreens.InitializeBuildingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".landlordScreens.PropertyManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterScreen"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".landlordScreens.LandlordHomePageActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".landlordScreens.FillUnitArrayActivity">
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="242dp"
+        android:layout_height="43dp"
+        android:maxLength="2"
+        android:text="Unit Initialization for:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071"
+        tools:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/Address"
+        android:layout_width="232dp"
+        android:layout_height="33dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
+        tools:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/unitIncrementer"
+        android:layout_width="232dp"
+        android:layout_height="33dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.229"
+        tools:textSize="20dp" />
+
+
+    <EditText
+        android:id="@+id/unitNumber"
+        android:layout_width="333dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:maxLength="2"
+        android:hint="Unit #"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unitIncrementer"
+        app:layout_constraintVertical_bias="0.073" />
+
+    <EditText
+        android:id="@+id/beds"
+        android:layout_width="333dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:maxLength="1"
+        android:hint="# of Beds"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unitNumber"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <EditText
+        android:id="@+id/baths"
+        android:layout_width="333dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:hint="# of baths"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beds"
+        app:layout_constraintVertical_bias="0.075" />
+
+    <EditText
+        android:id="@+id/rent"
+        android:layout_width="333dp"
+        android:layout_height="49dp"
+        android:maxLength="3"
+        android:ems="10"
+        android:hint="Rent"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/nextUnit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/baths"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <Button
+        android:id="@+id/nextUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_title"
+        app:layout_constraintVertical_bias="0.778" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

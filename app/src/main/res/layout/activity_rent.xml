@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".tenantScreens.RentActivity">
+
+    <TextView
+        android:id="@+id/payRent"
+        android:layout_width="356dp"
+        android:layout_height="198dp"
+
+        android:background="@drawable/border"
+        android:outlineSpotShadowColor="@color/black"
+        android:padding="25dp"
+        android:shadowColor="@color/black"
+        android:text="Pay Rent"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238" />
+
+    <TextView
+        android:id="@+id/value2"
+        android:layout_width="219dp"
+        android:layout_height="95dp"
+        android:gravity="right|bottom"
+        android:text="400.00"
+        android:textSize="40dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/payRent"
+        app:layout_constraintEnd_toEndOf="@+id/payRent"
+        app:layout_constraintHorizontal_bias="0.802"
+        app:layout_constraintStart_toStartOf="@+id/payRent"
+        app:layout_constraintTop_toTopOf="@+id/payRent"
+        app:layout_constraintVertical_bias="0.737" />
+
+    <TextView
+        android:id="@+id/value"
+        android:layout_width="114dp"
+        android:layout_height="45dp"
+        android:paddingLeft="7dp"
+        android:text="$"
+        android:textSize="35dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/value2"
+        app:layout_constraintEnd_toEndOf="@+id/value2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/value2"
+        app:layout_constraintTop_toTopOf="@+id/value2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/due"
+        android:layout_width="115dp"
+        android:layout_height="23dp"
+        android:text="Due: 11/30/2023"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/payRent"
+        app:layout_constraintEnd_toEndOf="@+id/payRent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="@+id/payRent"
+        app:layout_constraintTop_toTopOf="@+id/payRent"
+        app:layout_constraintVertical_bias="0.977" />
+
+    <ScrollView
+        android:id="@+id/scroller"
+        android:layout_width="360dp"
+        android:layout_height="333dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/payRent"
+        app:layout_constraintVertical_bias="0.589">
+
+        <LinearLayout
+            android:id="@+id/scrollLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="158dp"
+        android:layout_height="25dp"
+        android:text="Previous Statements:"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scroller"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/payRent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
